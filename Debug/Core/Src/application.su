@@ -1,0 +1,9 @@
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h:803:22:LL_GPIO_SetOutputPin	16	static
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h:861:22:LL_GPIO_TogglePin	24	static
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h:761:22:LL_APB2_GRP1_EnableClock	24	static
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_cortex.h:243:22:LL_SYSTICK_SetClkSource	16	static
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_cortex.h:272:22:LL_SYSTICK_EnableIT	4	static
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_utils.h:218:22:LL_InitTick	16	static
+../Core/Src/application.c:6:6:HAL_SYSTICK_Callback	4	static
+../Core/Src/application.c:11:6:delay_ms	24	static,ignoring_inline_asm
+../Core/Src/application.c:27:6:app_main	32	static
