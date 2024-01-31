@@ -3,9 +3,9 @@
 
 volatile uint32_t ms_ticks = 0;
 
-void HAL_SYSTICK_Callback(void)
+HAL_IncTick()
 {
-	ms_ticks++;
+    ms_ticks++;
 }
 
 void delay_ms(uint32_t delay_time_ms)
@@ -32,7 +32,7 @@ void app_main(void)
     LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_GPIOC);
 
     // Set GPIOC output
-    LL_GPIO_SetOutputPin(GPIOC, LL_GPIO_PIN_13);
+    LL_GPIO_ResetOutputPin(GPIOC, LL_GPIO_PIN_13);
 
     // Set GPIOC output type
     my_GPIO_InitStruct.Pin = LL_GPIO_PIN_13;
@@ -43,13 +43,14 @@ void app_main(void)
     LL_GPIO_Init(GPIOC, &my_GPIO_InitStruct);
 
     // Set the Systick clock to not div by 8
-    LL_SYSTICK_SetClkSource(LL_SYSTICK_CLKSOURCE_HCLK);
+    //LL_SYSTICK_SetClkSource(LL_SYSTICK_CLKSOURCE_HCLK_DIV8);
 
     // Enable Systick int
     LL_SYSTICK_EnableIT();
 
     // Set the Load value and enable Systick
-    LL_InitTick(8000000, 1);
+    //LL_InitTick(8000000, 1000);
+    LL_Init1msTick(8000000);
 
     while(1)
     {

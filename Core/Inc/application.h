@@ -4,6 +4,7 @@
 #include "stdint.h"
 
 #include "stm32f1xx_hal.h"
+#include "stm32f1xx.h"
 // Include for LL
 #include "stm32f1xx_ll_system.h"
 #include "stm32f1xx_ll_gpio.h"
